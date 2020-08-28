@@ -1,20 +1,16 @@
-import React from 'react';
+import React, { Component } from "react";
+import Membro from "./components/Membro";
 
-
-const Equipe = () => {
-    return(
-        <a>Funcionou</a>
-    ) 
-}
-
-function App(){
-    return(
-    <div>
-       <h1>Conheça nossa equipe:</h1>
-        <Equipe nome = "Lucas" cargo= "Programador" idade=  "29"/>
-
-    </div>     
-    )
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <h1>
+                    <Membro nome="Visitante" />
+                </h1>
+            </div>
+        );
+    }
 }
 
 export default App;
