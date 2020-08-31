@@ -5,49 +5,38 @@ class App extends Component{
     constructor(props){
         super(props)
         this.state = {
-            nome: '',
-            email: '',
-            senha:'',
-            error: ''
-        }
-        this.cadastrar = this.cadastrar.bind(this)
-    }
-
-
-    cadastrar(event){
-        const {nome,email,senha} = this.state
-
-        if(nome!== '' && email !== '' && senha!== ''){
-            alert(`Nome: ${nome}\nEmail: ${email}\n Senha: ${senha}`)            
-        } else {
-            this.setState({error: 'Ops! Parece estar faltando algo'})
+          
         }
 
-        //Não atualiza a página após submit
-        event.preventDefault()
-        
-    }
+        this.frases = ['A vida trará coisas boas se tiveres paciência.',
+        'Não compense na ira o que lhe falta na razão.',
+         'Defeitos e virtudes são apenas dois lados da mesma moeda', 
+       'A maior de todas as torres começa no solo.', 
+       'Não há que ser forte. Há que ser flexível.', 'Siga os bons e aprenda com eles.' ]
 
+    }
 
     render(){
         return(
             <div>
-                <h1>Novo Usuário</h1>
-            {this.state.error && <p>{this.state.error}</p>}
-            <form onSubmit={this.cadastrar}>
-                <label>Nome: </label>
-                <input type="text" value={this.state.nome} 
-                onChange={(e) => this.setState({nome: e.target.value})} /><br/>
-                <label>E-mail:</label>
-                <input type="email" value={this.state.email} onChange={(e)=> this.setState({email: e.target.value})} /> <br/>
-                <label>Senha:</label>
-                <input type="password" value={this.state.senha} onChange={(e)=> this.setState({senha: e.target.value})}/> <br/>
-                <button type="submit">Cadastrar</button>
-            </form>
+                <img src={require('./assets/biscoito.png')}/>
+                <Botao/>
+                <h3>Frase numero 1 aleatoria...</h3>
+            </div>
+        )
+    }
+}
 
+
+class Botao extends Component{
+    render(){
+        return(
+            <div>
+                <button>Abrir Biscoito</button>
             </div>
         )
     }
 }
 
 export default App;
+
